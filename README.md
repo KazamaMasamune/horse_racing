@@ -41,3 +41,87 @@ Environment:
 Planned:
   - FastAPI: Faster backend 🚀
   - TensorFlow: Deep learning models 🧠
+horse_racing/
+├── backend/
+│   ├── app.py                    # Flask app for predictions
+│   ├── train_model.py            # Trains the ML model
+│   ├── horse_race_predictor_model.pkl  # Saved model
+│   ├── features.pkl              # Feature preprocessing data
+│   ├── race-result-horse.csv     # Dataset
+│   ├── jockey_win_rates.png      # Feature visualization
+│   ├── inspect_data.py           # Data analysis script
+│   └── print_features.py         # Feature inspection utility
+├── horse-race-frontend/
+│   ├── pages/
+│   │   ├── index.js              # Main web UI
+│   │   ├── _app.js               # Next.js app config
+│   │   ├── _document.js          # Document setup
+│   │   └── api/hello.js          # Sample API endpoint
+│   ├── styles/globals.css        # Global styles
+│   ├── public/*.svg              # Static assets (icons)
+│   ├── package.json              # Node.js dependencies
+│   └── next.config.mjs           # Next.js config
+├── .gitignore                    # Ignores venv/, node_modules/
+└── README.md                     # Project documentation
+⚙️ Installation
+Set up the system locally:
+
+Clone the Repository:
+bash
+
+Copy
+git clone https://github.com/KazamaMasamune/horse_racing.git
+cd horse_racing
+Backend Setup:
+Create a Python virtual environment:
+bash
+
+Copy
+cd backend
+python3 -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+Install dependencies:
+bash
+
+Copy
+pip install flask==2.0.1 scikit-learn==1.0.2 pandas==1.3.5 numpy==1.21.6 joblib==1.1.0
+Frontend Setup:
+Navigate to frontend:
+bash
+
+Copy
+cd ../horse-race-frontend
+Install Node.js dependencies:
+bash
+
+Copy
+npm install
+Verify Files:
+Ensure backend/race-result-horse.csv, backend/horse_race_predictor_model.pkl, and backend/train_model.py are present.
+Note: Requires Python 3.12+ (python3 --version) and Node.js 18+ (node --version).
+
+🚀 Usage
+Run and interact with the system:
+
+Train the Model (if needed):
+bash
+
+Copy
+cd backend
+source .venv/bin/activate
+python3 train_model.py
+Generates horse_race_predictor_model.pkl and jockey_win_rates.png.
+Start the Flask Backend:
+bash
+
+Copy
+python3 app.py
+Runs on http://localhost:5000.
+Start the Next.js Frontend:
+In a new terminal:
+bash
+
+Copy
+cd horse-race-frontend
+npm run dev
+Visit http://localhost:3000 in your browser
